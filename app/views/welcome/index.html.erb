@@ -1,0 +1,26 @@
+<div class="content">
+<h3>What would you like to see:</h3>
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active"><a data-toggle="tab" href="#home">Youtube Public API</a></li>
+  <li role="presentation">
+  <a data-toggle="tab" href="#twitter">Twitter Public API</a></li>
+  <li role="presentation"><a data-toggle="tab" href="#github">Github Public API</a></li>
+</ul>
+<div class="tab-content">
+  <div id="home" class="tab-pane fade in active">
+  <br/>
+  <%= render 'shared/form', :source => "youtube"  %>
+ </div>
+  <div id="twitter" class="tab-pane fade">
+    <br/>
+ 	<%= render 'shared/form', :source => "twitter"  %>
+  </div>
+  <div id="github" class="tab-pane fade">
+    <br/>
+    <%= render 'shared/form', :source => "github"  %>
+  </div>
+</div>
+
+</div>
+
+

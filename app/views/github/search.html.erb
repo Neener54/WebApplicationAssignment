@@ -1,0 +1,8 @@
+<%  @data %><br/>
+<%= image_tag @data["avatar_url"] %>
+<div class="content">
+  <strong>Name: </strong><%= @data["name"] %><br/>
+  <strong>Following: </strong><%= @data["following"] %><br/>
+  <strong>Followers:</strong><%= @data["followers"] %><br/>
+  <strong>Public Repos:</strong> <%= @data["public_repos"] %><br/>
+</div>
