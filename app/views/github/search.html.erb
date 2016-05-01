@@ -1,8 +1,33 @@
-<%  @data %><br/>
-<%= image_tag @data["avatar_url"] %>
-<div class="content">
-  <strong>Name: </strong><%= @data["name"] %><br/>
+<style type="text/css">
+	.panelshadow{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+</style>
+<% if @repos.present? %>
+<div class="row">
+<div class="col-md-6">
+<%= image_tag @data["avatar_url"] %><br/>
+<strong>Name: </strong><%= @data["name"] %><br/>
   <strong>Following: </strong><%= @data["following"] %><br/>
   <strong>Followers:</strong><%= @data["followers"] %><br/>
   <strong>Public Repos:</strong> <%= @data["public_repos"] %><br/>
 </div>
+<div class="col-md-6">
+  <% @repos.each do |rep| %>
+   <div class="panel panel-default panelshadow">
+      <div class="panel-heading"><%= link_to rep["name"], rep["html_url"], :target => "_blank" %></div>
+      <div class="panel-body">
+      <span class="label label-primary">Stars: <%= rep["stargazers_count"] %></span>
+      <span class="label label-success">Issues: <%= rep["open_issues_count"] %></span>&nbsp;
+      <span class="label label-danger"><%= rep["language"] %></span>
+      <span class="label label-warning">Forks: <%= rep["forks"] %></span>&nbsp;
+      </div>
+    </div>
+
+  <% end %>
+   </div>
+  
+</div>
+<% else %>
+No Data found....
+<% end %>
