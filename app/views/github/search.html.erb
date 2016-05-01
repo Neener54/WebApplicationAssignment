@@ -1,6 +1,7 @@
 <div id="data">
+<div id="clear_github">
 <% if @repos.present? %>
-<div class="row" id="clear_github">
+<div class="row">
 <div class="col-md-6">
 <%= image_tag @data["avatar_url"] %><br/>
 <strong>Name: </strong><%= @data["name"] %><br/>
@@ -27,4 +28,5 @@
 <% else %>
 No Data found....
 <% end %>
+</div>
 </div>
