@@ -1,3 +1,5 @@
+<div id="data">
+<div id="clear_twitter">
 <% if @timeline.present? %>
  <h2>Recent Tweets of <%= @timeline.first.user.name%></h2>
   <% @timeline.each do |client| %>
@@ -8,4 +10,5 @@
 <% else %>
   Sorry something went wrong...
 <% end %>
-
+</div>
+</div>

@@ -1,10 +1,6 @@
-<style type="text/css">
-	.panelshadow{
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-</style>
+<div id="data">
 <% if @repos.present? %>
-<div class="row">
+<div class="row" id="clear_github">
 <div class="col-md-6">
 <%= image_tag @data["avatar_url"] %><br/>
 <strong>Name: </strong><%= @data["name"] %><br/>
@@ -31,3 +27,4 @@
 <% else %>
 No Data found....
 <% end %>
+</div>

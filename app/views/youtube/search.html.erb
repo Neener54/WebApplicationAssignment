@@ -1,17 +1,21 @@
-
+<div id="data">
+  <div id="clear">
   <% if @videos.present? %>
-	<% @videos.each do |video| %>
+  <% @videos.each do |video| %>
   <div class="row">
   <div class="col-md-8">
     <iframe width="500" height="400" src="<%= video[:url] %>"></iframe>
   </div>
    <div class="col-md-4">
-	  <h3> <%= video[:title] %></h3>
-	  <p> <%= video[:description] %></p>
-	  </div>
+    <h3> <%= video[:title] %></h3>
+    <p> <%= video[:description] %></p>
+    </div>
     </div>
 
-	<% end %> 
+  <% end %> 
   <% else %>
     Sorry No Data Found...!
   <% end %> 
+ </div>
+</div>
+  

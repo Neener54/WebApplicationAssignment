@@ -1,9 +1,10 @@
 <div class="row ">
-  <%= form_tag "#{source}/search", :method => 'get' do %>
+  <%#= form_tag "#{source}/search", :method => 'get'  do %>
   <div>
-    <%= text_field_tag :search, params[:search] ,:class => "form-control", :placeholder => "Search"%><br/>
-    <%= submit_tag "Search", :class => "btn btn-primary"%>
-  <% end %>
+    <%= text_field_tag :search, params[:search] ,:class => "form-control", :id => "data_#{source}",:placeholder => "Search"%><br/>
+    <a href="javascript:void(0)" onclick='loadData("<%= source %>")' class="btn btn-primary">Search</a>
+    <%#= submit_tag "Search", :onclick => "loadTweets()",:class => "btn btn-primary"%>
+  <%# end %>
   </div>
 </div>
  
