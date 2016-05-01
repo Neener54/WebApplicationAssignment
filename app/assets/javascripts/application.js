@@ -17,10 +17,9 @@
 //= require bootstrap-sprockets
 
 function loadData(source) {
-	alert("hi")
-  $('#clear').empty();
-  $('#clear_twitter').empty();
-  $('#clear_github').empty();
+	$('#clear').remove();
+  $('#clear_twitter').remove();
+  $('#clear_github').remove();
   var src = "#" + source;
   var id = "data_" + source;
   var url = source + "/search?search="
