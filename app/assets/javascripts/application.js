@@ -12,12 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.turbolinks
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
 
 
-$(window).load(function() {
+$(document).ready(function() {
     $('#loading').hide();
 });
 
