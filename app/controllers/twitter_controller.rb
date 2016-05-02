@@ -7,8 +7,11 @@ class TwitterController < ApplicationController
 	  	  config.access_token_secret = ENV["ACCESS_TOKEN_SECRET"]
 	  	end
 	    begin
-	      @timeline = @client.user_timeline("#{params[:search]}")
-	      @user = @timeline.first
+	      user = @client.user("#{params[:search]}")
+	      unless user.nil?
+	        @timeline = @client.user_timeline("#{params[:search]}")
+	        @user = @timeline.first
+	      end
 	    rescue Exception => e
           raise e
         end
