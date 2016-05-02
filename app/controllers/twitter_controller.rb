@@ -8,8 +8,9 @@ class TwitterController < ApplicationController
 	  	end
 	    begin
 	      @timeline = @client.user_timeline("#{params[:search]}")
+	      @user = @timeline.first
 	    rescue Exception => e
-          puts e
+          raise e
         end
      end
 end

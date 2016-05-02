@@ -11,17 +11,23 @@
   <li role="presentation"><a data-toggle="tab" href="#github">Github Public API</a></li>
 </ul>
 <div class="tab-content">
+<div id="loading">
+  <img id="loading-image" src="/assets/ajax-loader.gif" alt="Loading..." />
+</div>
   <div id="youtube" class="tab-pane fade in active">
   <br/>
   <%= render 'shared/form', :source => "youtube"  %>
+  <div id="youtube_error"></div>
  </div>
   <div id="twitter" class="tab-pane fade">
     <br/>
  	<%= render 'shared/form', :source => "twitter"  %>
+  <div id="twitter_error"></div>
   </div>
   <div id="github" class="tab-pane fade">
     <br/>
     <%= render 'shared/form', :source => "github"  %>
+    <div id="github_error"></div>
   </div>
 </div>
 

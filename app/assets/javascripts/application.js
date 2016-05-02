@@ -16,12 +16,19 @@
 //= require_tree .
 //= require bootstrap-sprockets
 
+
+$(window).load(function() {
+    $('#loading').hide();
+});
+
 function loadData(source) {
+  $("#loading").show();
 	$('#clear').remove();
   $('#clear_twitter').remove();
   $('#clear_github').remove();
   var src = "#" + source;
   var id = "data_" + source;
+  var err = "#" + source + "_error"
   var url = source + "/search?search="
   var xhttp = new XMLHttpRequest();
   var a = document.getElementById(id).value;
@@ -29,6 +36,14 @@ function loadData(source) {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
       var responseText = xhttp.responseText;
       $(src).append("<br/>" + $(responseText).find('#data').html());
+      $('#loading').hide();
+      $(window).scrollTop(600);
+      $(err).empty();
+    }
+    else if (xhttp.readyState == 4 && xhttp.status == 500){
+      $('#loading').hide();
+      $(window).scrollTop(600);
+      $(err).html("<br/><h2 class='alert alert-danger'>Oh dear, something went wrong...!</h2>");
     }
   };
   xhttp.open("GET", url+a, true);

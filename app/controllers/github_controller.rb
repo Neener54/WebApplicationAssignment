@@ -14,7 +14,7 @@ class GithubController < ApplicationController
   	begin
   	  Net::HTTP.get(URI(url))
     rescue Exception => e
-  	 puts e
+  	 puts "#{e}"
     end
   end
 end
