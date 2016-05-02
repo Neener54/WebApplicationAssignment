@@ -24,18 +24,17 @@ $(document).ready(function() {
 
 function loadData(source) {
   $("#loading").show();
-	$('#clear').remove();
-  $('#clear_twitter').remove();
-  $('#clear_github').remove();
-  var src = "#" + source;
+	var src = "#" + source;
   var id = "data_" + source;
   var err = "#" + source + "_error"
   var url = source + "/search?search="
   var xhttp = new XMLHttpRequest();
+  var clear_data = '#clear_' + source; 
   var a = document.getElementById(id).value;
   xhttp.onreadystatechange = function() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
       var responseText = xhttp.responseText;
+      $(clear_data).remove();
       $(src).append("<br/>" + $(responseText).find('#data').html());
       $('#loading').hide();
       $(window).scrollTop(600);
