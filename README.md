@@ -15,4 +15,10 @@ Build Instructions
 
 1. rvm use 2.2.1
 2. bundle install
-3. change gem in Gemfile
+3. rake db:create
+4. rake db:migrate
+5. rails s
+
+Replace env. variables in twitter controller and youtube controller with yours in order to run the application.
+
+Heroku link: http://web-application-assignment.herokuapp.com/
