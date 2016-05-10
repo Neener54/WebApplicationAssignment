@@ -1,3 +1,6 @@
+#@Comment Having config in the controller is a sign that it's doing too much
+#
+#Rescuing an exception after catching it doesn't make a lot of sense
 class TwitterController < ApplicationController
 	def search
 		@client = Twitter::REST::Client.new do |config|

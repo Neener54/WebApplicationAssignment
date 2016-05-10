@@ -1,3 +1,9 @@
+#@Comment
+You might consider cleaning up the unused files in the app. Clean code bases are a great skill to have. 
+
+The application is overall pretty good quality for an intern level application and I think you did well.
+---
+
 This project demonstrates the use of three public APIs, they are as follows:
 1. Youtube Public API
 2. Twitter Public API

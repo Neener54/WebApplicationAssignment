@@ -1,9 +1,14 @@
 YOUTUBE_API_SERVICE_NAME = 'youtube'
 YOUTUBE_API_VERSION = 'v3'
 require 'google/api_client'
-
+#@Comment Having constants being declared in the controller is probably not a
+#great idea.
+#
+#Again the configuration in the controller is not optimal
+#
+#This controller is really large and doing too much
 class YoutubeController < ApplicationController
- 
+
   def search
   	client = Google::APIClient.new(
                :key => ENV['GOOGLE_API_KEY'],
@@ -38,7 +43,7 @@ class YoutubeController < ApplicationController
   rescue Google::APIClient::TransmissionError => e
     puts e.result.body
   end
- 
+
 
   end
 end
